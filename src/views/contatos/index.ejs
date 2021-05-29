@@ -1,0 +1,46 @@
+<%- include('../shared/header') %>
+<section class="page-section about-heading">
+  <div class="container">
+    <div class="about-heading-content">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 mx-auto">
+            <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-lower">Como podemos ajudar você?</span>
+                </h2>
+                <% if(sucesso) { %>
+                  <div class="alert alert-success" role="alert">
+                    <%= sucesso %>
+                  </div>
+                  <br>
+                <% } else if(erro) { %>
+                  <div class="alert alert-danger" role="alert">
+                    <%= erro %>
+                  </div>
+                  <br>
+                <% } %>
+                <form action="/fale-conosco/cadastrar" method="POST">
+                  <div class="form-group">
+                    <label for="nome">Seu nome</label>
+                    <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nameHelp" placeholder="Digite seu nome">
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Digite seu email">
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <label for="comentario">Deixe seu comentário</label>
+                    <textarea class="form-control" name="comentario" id="comentario" placeholder="Digite seu comentário aqui"></textarea>
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%- include('../shared/footer') %>
